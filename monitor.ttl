@@ -1,0 +1,597 @@
+@prefix : <http://gisxx.com/ontology/monitor#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://gisxx.com/ontology/monitor> .
+
+<http://gisxx.com/ontology/monitor> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/domainIncludes
+<http://schema.org/domainIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/rangeIncludes
+<http://schema.org/rangeIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <http://www.w3.org/ns/sosa/isFeatureOfInterestOf> ;
+                                                 <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                                 <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                                 rdfs:comment "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+                                                 rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                                 rdfs:label "has feature of interest"@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "A relation between an Observation and the entity whose quality was observed, or between an Actuation and the entity whose property was modified, or between an act of Sampling and the entity that was sampled."@en ;
+                                                 <http://www.w3.org/2004/02/skos/core#example> "For example, in an Observation of the weight of a person, the FeatureOfInterest is the person and the property is its weight."@en .
+
+
+###  http://www.w3.org/ns/sosa/hasResult
+<http://www.w3.org/ns/sosa/hasResult> rdf:type owl:ObjectProperty ;
+                                      owl:inverseOf <http://www.w3.org/ns/sosa/isResultOf> ;
+                                      <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                      <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Result> ;
+                                      rdfs:comment "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample."@en ;
+                                      rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                      rdfs:label "has result"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "Relation linking an Observation or Actuation or act of Sampling and a Result or Sample."@en .
+
+
+###  http://www.w3.org/ns/sosa/hosts
+<http://www.w3.org/ns/sosa/hosts> rdf:type owl:ObjectProperty ;
+                                  owl:inverseOf <http://www.w3.org/ns/sosa/isHostedBy> ;
+                                  <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Platform> ;
+                                  <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Platform> ,
+                                                                    <http://www.w3.org/ns/sosa/Sensor> ;
+                                  rdfs:comment "Relation between a Platform and a Sensor, Actuator, Sampler, or Platform, hosted or mounted on it."@en ;
+                                  rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                  rdfs:label "hosts"@en ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Platform and a Sensor, Actuator, Sampler, or Platform, hosted or mounted on it."@en .
+
+
+###  http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+<http://www.w3.org/ns/sosa/isFeatureOfInterestOf> rdf:type owl:ObjectProperty ;
+                                                  <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                                  <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                                  rdfs:comment "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en ;
+                                                  rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                                  rdfs:label "is feature of interest of"@en ;
+                                                  <http://www.w3.org/2004/02/skos/core#definition> "A relation between a FeatureOfInterest and an Observation about it, an Actuation acting on it, or an act of Sampling that sampled it."@en .
+
+
+###  http://www.w3.org/ns/sosa/isHostedBy
+<http://www.w3.org/ns/sosa/isHostedBy> rdf:type owl:ObjectProperty ;
+                                       <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Platform> ,
+                                                                          <http://www.w3.org/ns/sosa/Sensor> ;
+                                       <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Platform> ;
+                                       rdfs:comment "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by."@en ;
+                                       rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                       rdfs:label "is hosted by"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Sensor, Actuator, Sampler, or Platform, and the Platform that it is mounted on or hosted by."@en .
+
+
+###  http://www.w3.org/ns/sosa/isObservedBy
+<http://www.w3.org/ns/sosa/isObservedBy> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <http://www.w3.org/ns/sosa/observes> ;
+                                         <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                                         <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sensor> ;
+                                         rdfs:comment "Relation between an ObservableProperty and the Sensor able to observe it."@en ;
+                                         rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                         rdfs:label "is observed by"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "Relation between an ObservableProperty and the Sensor able to observe it."@en .
+
+
+###  http://www.w3.org/ns/sosa/isResultOf
+<http://www.w3.org/ns/sosa/isResultOf> rdf:type owl:ObjectProperty ;
+                                       <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Result> ;
+                                       <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                       rdfs:comment "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it."@en ;
+                                       rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                       rdfs:label "is result of"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Relation linking a Result to the Observation or Actuation or act of Sampling that created or caused it."@en .
+
+
+###  http://www.w3.org/ns/sosa/madeBySensor
+<http://www.w3.org/ns/sosa/madeBySensor> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <http://www.w3.org/ns/sosa/madeObservation> ;
+                                         <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                         <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Sensor> ;
+                                         rdfs:comment "Relation between an Observation and the Sensor which made the Observation."@en ;
+                                         rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                         rdfs:label "made by sensor"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "Relation between an Observation and the Sensor which made the Observation."@en .
+
+
+###  http://www.w3.org/ns/sosa/madeObservation
+<http://www.w3.org/ns/sosa/madeObservation> rdf:type owl:ObjectProperty ;
+                                            <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sensor> ;
+                                            <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                            rdfs:comment "Relation between a Sensor and an Observation made by the Sensor."@en ;
+                                            rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                            rdfs:label "made observation"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Sensor and an Observation made by the Sensor."@en .
+
+
+###  http://www.w3.org/ns/sosa/observedProperty
+<http://www.w3.org/ns/sosa/observedProperty> rdf:type owl:ObjectProperty ;
+                                             <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                             <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                                             rdfs:comment "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en ;
+                                             rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                             rdfs:label "observed property"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."@en .
+
+
+###  http://www.w3.org/ns/sosa/observes
+<http://www.w3.org/ns/sosa/observes> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf <http://www.w3.org/ns/ssn/forProperty> ;
+                                     <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Sensor> ;
+                                     <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                                     rdfs:comment "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en ;
+                                     rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                     rdfs:label "observes"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Sensor and an ObservableProperty that it is capable of sensing."@en .
+
+
+###  http://www.w3.org/ns/sosa/phenomenonTime
+<http://www.w3.org/ns/sosa/phenomenonTime> rdf:type owl:ObjectProperty ;
+                                           <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                           <http://schema.org/rangeIncludes> <http://www.w3.org/2006/time#TemporalEntity> ;
+                                           rdfs:comment "The time that the Result of an Observation, Actuation or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an Interval or an Instant, or some other compound TemporalEntity."@en ;
+                                           rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                           rdfs:label "phenomenon time"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "The time that the Result of an Observation, Actuation or Sampling applies to the FeatureOfInterest. Not necessarily the same as the resultTime. May be an Interval or an Instant, or some other compound TemporalEntity."@en .
+
+
+###  http://www.w3.org/ns/sosa/usedProcedure
+<http://www.w3.org/ns/sosa/usedProcedure> rdf:type owl:ObjectProperty ;
+                                          owl:propertyChainAxiom ( <http://www.w3.org/ns/sosa/madeBySensor>
+                                                                   <http://www.w3.org/ns/ssn/implements>
+                                                                 ) ;
+                                          <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                          <http://schema.org/rangeIncludes> <http://www.w3.org/ns/sosa/Procedure> ;
+                                          rdfs:comment "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."@en ;
+                                          rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                          rdfs:label "used procedure"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "A relation to link to a re-usable Procedure used in making an Observation, an Actuation, or a Sample, typically through a Sensor, Actuator or Sampler."@en .
+
+
+###  http://www.w3.org/ns/ssn/forProperty
+<http://www.w3.org/ns/ssn/forProperty> rdf:type owl:ObjectProperty ;
+                                       rdfs:comment "A relation between some aspect of an entity and a Property."@en ;
+                                       rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                       rdfs:label "for property"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A relation between some aspect of an entity and a Property."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#example> "For example, from a Sensor to the properties it can observe; from an Actuator to the properties it can act on; from a Deployment to the properties it was installed to observe or act on; from a SystemCapability to the Property the capability is described for."@en .
+
+
+###  http://www.w3.org/ns/ssn/hasDeployment
+<http://www.w3.org/ns/ssn/hasDeployment> rdf:type owl:ObjectProperty ;
+                                         rdfs:comment "Relation between a System and a Deployment, recording that the System is deployed in that Deployment."@en ;
+                                         rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                         rdfs:label "has deployment"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "Relation between a System and a Deployment, recording that the System is deployed in that Deployment."@en .
+
+
+###  http://www.w3.org/ns/ssn/hasInput
+<http://www.w3.org/ns/ssn/hasInput> rdf:type owl:ObjectProperty ;
+                                    rdfs:comment "Relation between a Procedure and an Input to it."@en ;
+                                    rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                    rdfs:label "has input"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Procedure and an Input to it."@en .
+
+
+###  http://www.w3.org/ns/ssn/hasOutput
+<http://www.w3.org/ns/ssn/hasOutput> rdf:type owl:ObjectProperty ;
+                                     rdfs:comment "Relation between a Procedure and an Output of it."@en ;
+                                     rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                     rdfs:label "has output"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Procedure and an Output of it."@en .
+
+
+###  http://www.w3.org/ns/ssn/hasProperty
+<http://www.w3.org/ns/ssn/hasProperty> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <http://www.w3.org/ns/ssn/isPropertyOf> ;
+                                       rdfs:comment "Relation between an entity and a Property of that entity."@en ;
+                                       rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                       rdfs:label "has property"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Relation between an entity and a Property of that entity."@en .
+
+
+###  http://www.w3.org/ns/ssn/implementedBy
+<http://www.w3.org/ns/ssn/implementedBy> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <http://www.w3.org/ns/ssn/implements> ;
+                                         rdfs:comment "Relation between a Procedure (an algorithm, procedure or method) and an entity that implements that Procedure in some executable way."@en ;
+                                         rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                         rdfs:label "implemented by"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Procedure (an algorithm, procedure or method) and an entity that implements that Procedure in some executable way."@en ;
+                                         <http://www.w3.org/2004/02/skos/core#example> "For example, the relationship between a scientific measuring Procedure and a sensor that senses via that Procedure."@en .
+
+
+###  http://www.w3.org/ns/ssn/implements
+<http://www.w3.org/ns/ssn/implements> rdf:type owl:ObjectProperty ;
+                                      rdfs:comment "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)."@en ;
+                                      rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                      rdfs:label "implements"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "Relation between an entity that implements a Procedure in some executable way and the Procedure (an algorithm, procedure or method)."@en ;
+                                      <http://www.w3.org/2004/02/skos/core#example> "For example, the relationship between a sensor and the scientific measuring Procedure via which it senses."@en .
+
+
+###  http://www.w3.org/ns/ssn/isPropertyOf
+<http://www.w3.org/ns/ssn/isPropertyOf> rdf:type owl:ObjectProperty ;
+                                        rdfs:comment "Relation between a Property and the entity it belongs to."@en ;
+                                        rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                        rdfs:label "is property of"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "Relation between a Property and the entity it belongs to."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/ns/sosa/resultTime
+<http://www.w3.org/ns/sosa/resultTime> rdf:type owl:DatatypeProperty ;
+                                       rdfs:range xsd:dateTime ;
+                                       <http://schema.org/domainIncludes> <http://www.w3.org/ns/sosa/Observation> ;
+                                       rdfs:comment "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en ;
+                                       rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                       rdfs:label "result time"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "The result time is the instant of time when the Observation, Actuation or Sampling activity was completed."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://gisxx.com/ontology/wmo#Drone-basedPlatform
+<http://gisxx.com/ontology/wmo#Drone-basedPlatform> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://gisxx.com/ontology/wmo#Human
+<http://gisxx.com/ontology/wmo#Human> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://gisxx.com/ontology/wmo#HyperspectralSensor
+<http://gisxx.com/ontology/wmo#HyperspectralSensor> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://gisxx.com/ontology/wmo#Satellite-basedPlatform
+<http://gisxx.com/ontology/wmo#Satellite-basedPlatform> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://gisxx.com/ontology/wmo#TemperatureSensor
+<http://gisxx.com/ontology/wmo#TemperatureSensor> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://gisxx.com/ontology/wmo#Tower-basedPlatform
+<http://gisxx.com/ontology/wmo#Tower-basedPlatform> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
+
+
+###  http://gisxx.com/ontology/wmo#VideoSensor
+<http://gisxx.com/ontology/wmo#VideoSensor> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000004
+<http://purl.obolibrary.org/obo/BFO_0000004> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000008
+<http://purl.obolibrary.org/obo/BFO_0000008> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000015
+<http://purl.obolibrary.org/obo/BFO_0000015> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000019
+<http://purl.obolibrary.org/obo/BFO_0000019> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000030
+<http://purl.obolibrary.org/obo/BFO_0000030> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000031
+<http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000008> .
+
+
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000004> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://www.w3.org/ns/ssn/hasProperty> ;
+                                                                owl:allValuesFrom <http://www.w3.org/ns/ssn/Property>
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://www.w3.org/ns/ssn/hasProperty> ;
+                                                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                              ] ;
+                                              rdfs:comment "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
+                                              rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                              rdfs:label "Feature Of Interest"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "The thing whose property is being estimated or calculated in the course of an Observation to arrive at a Result or whose property is being manipulated by an Actuator, or which is being sampled or transformed in an act of Sampling."@en ;
+                                              <http://www.w3.org/2004/02/skos/core#example> "When measuring the height of a tree, the height is the observed ObservableProperty, 20m may be the Result of the Observation, and the tree is the FeatureOfInterest. A window is a FeatureOfInterest for an automatic window control Actuator."@en .
+
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://www.w3.org/ns/sosa/isObservedBy> ;
+                                                                 owl:allValuesFrom <http://www.w3.org/ns/sosa/Sensor>
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty [ owl:inverseOf <http://www.w3.org/ns/sosa/observedProperty>
+                                                                                ] ;
+                                                                 owl:allValuesFrom <http://www.w3.org/ns/sosa/Observation>
+                                                               ] ;
+                                               rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                                               rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                               rdfs:label "Observable Property"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
+
+
+###  http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/FeatureOfInterest>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/hasResult> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/Result>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/madeBySensor> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/Sensor>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/observedProperty> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/ObservableProperty>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/usedProcedure> ;
+                                                          owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/hasResult> ;
+                                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/madeBySensor> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/observedProperty> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/phenomenonTime> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://www.w3.org/ns/sosa/resultTime> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] ;
+                                        rdfs:comment "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+                                        rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                        rdfs:label "Observation"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "Act of carrying out an (Observation) Procedure to estimate or calculate a value of a property of a FeatureOfInterest. Links to a Sensor to describe what made the Observation and how; links to an ObservableProperty to describe what the result is an estimate of, and to a FeatureOfInterest to detail what that property was associated with."@en ;
+                                        <http://www.w3.org/2004/02/skos/core#example> "The activity of estimating the intensity of an Earthquake using the Mercalli intensity scale is an Observation as is measuring the moment magnitude, i.e., the energy released by said earthquake."@en .
+
+
+###  http://www.w3.org/ns/sosa/Platform
+<http://www.w3.org/ns/sosa/Platform> rdf:type owl:Class ;
+                                     rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <http://www.w3.org/ns/sosa/hosts> ;
+                                                       owl:allValuesFrom <http://www.w3.org/ns/ssn/System>
+                                                     ] ;
+                                     rdfs:comment "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms."@en ;
+                                     rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                     rdfs:label "Platform"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "A Platform is an entity that hosts other entities, particularly Sensors, Actuators, Samplers, and other Platforms."@en ;
+                                     <http://www.w3.org/2004/02/skos/core#example> "A post, buoy, vehicle, ship, aircraft, satellite, cell-phone, human or animal may act as platforms for (technical or biological) sensors or actuators."@en .
+
+
+###  http://www.w3.org/ns/sosa/Procedure
+<http://www.w3.org/ns/sosa/Procedure> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <http://www.w3.org/ns/ssn/implementedBy> ;
+                                                        owl:allValuesFrom <http://www.w3.org/ns/ssn/System>
+                                                      ] ;
+                                      rdfs:comment "A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation, create a Sample, or make a change to the state of the world (via an Actuator). A Procedure is re-usable, and might be involved in many Observations, Samplings, or Actuations. It explains the steps to be carried out to arrive at reproducible results."@en ;
+                                      rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                      rdfs:label "Procedure"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "A workflow, protocol, plan, algorithm, or computational method specifying how to make an Observation, create a Sample, or make a change to the state of the world (via an Actuator). A Procedure is re-usable, and might be involved in many Observations, Samplings, or Actuations. It explains the steps to be carried out to arrive at reproducible results."@en ;
+                                      <http://www.w3.org/2004/02/skos/core#example> "The measured wind speed differs depending on the height of the sensor above the surface, e.g., due to friction. Consequently, procedures for measuring wind speed define a standard height for anemometers above ground, typically 10m for meteorological measures and 2m in Agrometeorology. This definition of height, sensor placement, and so forth are defined by the Procedure."@en ;
+                                      <http://www.w3.org/2004/02/skos/core#note> "Many observations may be created via the same Procedure, the same way as many tables are assembled using the same instructions (as information objects, not their concrete realization)."@en .
+
+
+###  http://www.w3.org/ns/sosa/Result
+<http://www.w3.org/ns/sosa/Result> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.w3.org/ns/sosa/isResultOf> ;
+                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ;
+                                   rdfs:comment "The Result of an Observation, Actuation, or act of Sampling. To store an observation's simple result value one can use the hasSimpleResult property."@en ;
+                                   rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                   rdfs:label "Result"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "The Result of an Observation, Actuation, or act of Sampling. To store an observation's simple result value one can use the hasSimpleResult property."@en ;
+                                   <http://www.w3.org/2004/02/skos/core#example> "The value 20 as the height of a certain tree together with the unit, e.g., Meter."@en .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+<http://www.w3.org/ns/sosa/Sensor> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.w3.org/ns/ssn/System> ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.w3.org/ns/sosa/madeObservation> ;
+                                                     owl:allValuesFrom <http://www.w3.org/ns/sosa/Observation>
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.w3.org/ns/sosa/observes> ;
+                                                     owl:allValuesFrom <http://www.w3.org/ns/sosa/ObservableProperty>
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://www.w3.org/ns/ssn/implements> ;
+                                                     owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ;
+                                   rdfs:comment "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+                                   rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                   rdfs:label "Sensor"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "Device, agent (including humans), or software (simulation) involved in, or implementing, a Procedure. Sensors respond to a stimulus, e.g., a change in the environment, or input data composed from the results of prior Observations, and generate a Result. Sensors can be hosted by Platforms."@en ;
+                                   <http://www.w3.org/2004/02/skos/core#example> "Accelerometers, gyroscopes, barometers, magnetometers, and so forth are Sensors that are typically mounted on a modern smart phone (which acts as Platform). Other examples of sensors include the human eyes."@en .
+
+
+###  http://www.w3.org/ns/ssn/Property
+<http://www.w3.org/ns/ssn/Property> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://www.w3.org/ns/ssn/isPropertyOf> ;
+                                                      owl:allValuesFrom <http://www.w3.org/ns/sosa/FeatureOfInterest>
+                                                    ] ;
+                                    rdfs:comment "A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity."@en ;
+                                    rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                    rdfs:label "Property"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "A quality of an entity. An aspect of an entity that is intrinsic to and cannot exist without the entity."@en .
+
+
+###  http://www.w3.org/ns/ssn/System
+<http://www.w3.org/ns/ssn/System> rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://www.w3.org/ns/sosa/isHostedBy> ;
+                                                    owl:allValuesFrom <http://www.w3.org/ns/sosa/Platform>
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://www.w3.org/ns/ssn/implements> ;
+                                                    owl:allValuesFrom <http://www.w3.org/ns/sosa/Procedure>
+                                                  ] ;
+                                  rdfs:comment "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems."@en ;
+                                  rdfs:isDefinedBy <http://www.w3.org/ns/ssn/> ;
+                                  rdfs:label "System"@en ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "System is a unit of abstraction for pieces of infrastructure that implement Procedures. A System may have components, its subsystems, which are other systems."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.w3.org/ns/sosa/
+<http://www.w3.org/ns/sosa/> rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/ns/ssn/
+<http://www.w3.org/ns/ssn/> rdf:type owl:NamedIndividual .
+
+
+[ <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Working Group"@en
+] .
+
+[ <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Working Group"@en
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Working Group"@en
+ ] .
+
+[ <http://xmlns.com/foaf/0.1/name> "W3C/OGC Spatial Data on the Web Working Group"@en
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.w3.org/ns/sosa/actsOnProperty> rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> .
+
+
+<http://www.w3.org/ns/sosa/hasSimpleResult> rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> .
+
+
+<http://www.w3.org/ns/sosa/isActedOnBy> rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> .
+
+
+<http://www.w3.org/ns/sosa/madeActuation> rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> .
+
+
+<http://www.w3.org/ns/sosa/madeSampling> rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

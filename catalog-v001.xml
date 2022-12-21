@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/geospatial" uri="geospatial.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/temporal" uri="temporal.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/96328/ontologies/2022/11/untitled-ontology-89" uri="test.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/2006/time#2016" uri="file:/C:/Users/96328/Downloads/time.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/96328/ontologies/2022/11/untitled-ontology-87" uri="test.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.opengis.net/ont/geosparql/1.1" uri="file:/C:/Users/96328/OneDrive/phd/ontology/geo.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/96328/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/ecosystem" uri="ecosystem.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/monitor" uri="monitor.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/monitor" uri="monitor.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/96328/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/96328/ontologies/2022/11/untitled-ontology-83" uri="ls.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/96328/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/ssn/" uri="https://www.w3.org/ns/ssn/"/>
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/ns/sosa/" uri="https://www.w3.org/ns/sosa/"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/96328/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/96328/OneDrive/phd/ontology/bfo.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/96328/OneDrive/phd/ontology/bfo.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1671601823056" name="http://www.semanticweb.org/96328/ontologies/2022/11/untitled-ontology-89" uri="test.owl"/>
+    </group>
+</catalog>
