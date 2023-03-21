@@ -1,0 +1,515 @@
+@prefix : <http://www.gisxx.com/wmo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.gisxx.com/wmo/ecosystem> .
+
+<http://www.gisxx.com/wmo/ecosystem> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.gisxx.com/wmo#hasMaterial
+:hasMaterial rdf:type owl:ObjectProperty ;
+             rdfs:domain :Wetland ;
+             rdfs:range :WetlandMaterial .
+
+
+###  http://www.gisxx.com/wmo#hasObject
+:hasObject rdf:type owl:ObjectProperty ;
+           rdfs:domain :Wetland ;
+           rdfs:range :WetlandObject .
+
+
+###  http://www.gisxx.com/wmo#hasParticipant
+:hasParticipant rdf:type owl:ObjectProperty .
+
+
+###  http://www.gisxx.com/wmo#hasProcess
+:hasProcess rdf:type owl:ObjectProperty ;
+            rdfs:domain :Wetland ;
+            rdfs:range :WetlandProcess .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/BFO_0000006
+<http://purl.obolibrary.org/obo/BFO_0000006> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000015
+<http://purl.obolibrary.org/obo/BFO_0000015> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000030
+<http://purl.obolibrary.org/obo/BFO_0000030> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000040
+<http://purl.obolibrary.org/obo/BFO_0000040> rdf:type owl:Class .
+
+
+###  http://www.gisxx.com/wmo#AbioticMaterial
+:AbioticMaterial rdf:type owl:Class ;
+                 rdfs:subClassOf :WetlandMaterial .
+
+
+###  http://www.gisxx.com/wmo#Algae
+:Algae rdf:type owl:Class ;
+       rdfs:subClassOf :BioticMaterial .
+
+
+###  http://www.gisxx.com/wmo#Amphibian
+:Amphibian rdf:type owl:Class ;
+           rdfs:subClassOf :Vertebrate .
+
+
+###  http://www.gisxx.com/wmo#Animal
+:Animal rdf:type owl:Class ;
+        rdfs:subClassOf :BioticMaterial .
+
+
+###  http://www.gisxx.com/wmo#ArtificialObject
+:ArtificialObject rdf:type owl:Class ;
+                  rdfs:subClassOf :WetlandObject .
+
+
+###  http://www.gisxx.com/wmo#Atmosphere
+:Atmosphere rdf:type owl:Class ;
+            rdfs:subClassOf :AbioticMaterial .
+
+
+###  http://www.gisxx.com/wmo#BiologicalProcess
+:BiologicalProcess rdf:type owl:Class ;
+                   rdfs:subClassOf :WetlandProcess .
+
+
+###  http://www.gisxx.com/wmo#BioticMaterial
+:BioticMaterial rdf:type owl:Class ;
+                rdfs:subClassOf :WetlandMaterial .
+
+
+###  http://www.gisxx.com/wmo#Bird
+:Bird rdf:type owl:Class ;
+      rdfs:subClassOf :Vertebrate .
+
+
+###  http://www.gisxx.com/wmo#Bog
+:Bog rdf:type owl:Class ;
+     rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Bridge
+:Bridge rdf:type owl:Class ;
+        rdfs:subClassOf :ArtificialObject .
+
+
+###  http://www.gisxx.com/wmo#Building
+:Building rdf:type owl:Class ;
+          rdfs:subClassOf :ArtificialObject .
+
+
+###  http://www.gisxx.com/wmo#CO2
+:CO2 rdf:type owl:Class ;
+     rdfs:subClassOf :Atmosphere .
+
+
+###  http://www.gisxx.com/wmo#Canals_and_drainage_channels
+:Canals_and_drainage_channels rdf:type owl:Class ;
+                              rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#ChemicalProcesses
+:ChemicalProcesses rdf:type owl:Class ;
+                   rdfs:subClassOf :WetlandProcess .
+
+
+###  http://www.gisxx.com/wmo#Coastal_brackish_or_saline_lagoons
+:Coastal_brackish_or_saline_lagoons rdf:type owl:Class ;
+                                    rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Coastal_freshwater_lagoons
+:Coastal_freshwater_lagoons rdf:type owl:Class ;
+                            rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Coastal_wetland
+:Coastal_wetland rdf:type owl:Class ;
+                 rdfs:subClassOf :Natural_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Coral_reefs
+:Coral_reefs rdf:type owl:Class ;
+             rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Dam
+:Dam rdf:type owl:Class ;
+     rdfs:subClassOf :ArtificialObject .
+
+
+###  http://www.gisxx.com/wmo#Energyflow
+:Energyflow rdf:type owl:Class ;
+            rdfs:subClassOf :PhysicalProcesses .
+
+
+###  http://www.gisxx.com/wmo#Estuarine_systems_of_deltas
+:Estuarine_systems_of_deltas rdf:type owl:Class ;
+                             rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Excavated_or_sinked_water_area
+:Excavated_or_sinked_water_area rdf:type owl:Class ;
+                                rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Farm_ponds
+:Farm_ponds rdf:type owl:Class ;
+            rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Fish
+:Fish rdf:type owl:Class ;
+      rdfs:subClassOf :Vertebrate .
+
+
+###  http://www.gisxx.com/wmo#Flooding_wetlands
+:Flooding_wetlands rdf:type owl:Class ;
+                   rdfs:subClassOf :Riverine_wetland .
+
+
+###  http://www.gisxx.com/wmo#Forest_-dominated_freshwater_marsh
+:Forest_-dominated_freshwater_marsh rdf:type owl:Class ;
+                                    rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Freshwater_aquaculture_area
+:Freshwater_aquaculture_area rdf:type owl:Class ;
+                             rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Freshwater_springs_oases_wetlands
+:Freshwater_springs_oases_wetlands rdf:type owl:Class ;
+                                   rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Geothermal_wetland
+:Geothermal_wetland rdf:type owl:Class ;
+                    rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Grass
+:Grass rdf:type owl:Class ;
+       rdfs:subClassOf :Plant .
+
+
+###  http://www.gisxx.com/wmo#Herbage_-dominated_marsh
+:Herbage_-dominated_marsh rdf:type owl:Class ;
+                          rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Human-made_Wetland
+:Human-made_Wetland rdf:type owl:Class ;
+                    rdfs:subClassOf :Wetland .
+
+
+###  http://www.gisxx.com/wmo#Human-made_recreational_water_area
+:Human-made_recreational_water_area rdf:type owl:Class ;
+                                    rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#HydrologicalCycle
+:HydrologicalCycle rdf:type owl:Class ;
+                   rdfs:subClassOf :PhysicalProcesses .
+
+
+###  http://www.gisxx.com/wmo#Inland_saline_lake
+:Inland_saline_lake rdf:type owl:Class ;
+                    rdfs:subClassOf :Lacustrine_wetland .
+
+
+###  http://www.gisxx.com/wmo#Inland_saline_marsh
+:Inland_saline_marsh rdf:type owl:Class ;
+                     rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Intertidal_marshes
+:Intertidal_marshes rdf:type owl:Class ;
+                    rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Intertidal_mud_or_sand_flats
+:Intertidal_mud_or_sand_flats rdf:type owl:Class ;
+                              rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Invertebrate
+:Invertebrate rdf:type owl:Class ;
+              rdfs:subClassOf :Animal .
+
+
+###  http://www.gisxx.com/wmo#Irrigation_channels
+:Irrigation_channels rdf:type owl:Class ;
+                     rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Karst_subterranean_hydrological_systems
+:Karst_subterranean_hydrological_systems rdf:type owl:Class ;
+                                         rdfs:subClassOf :Riverine_wetland .
+
+
+###  http://www.gisxx.com/wmo#Lacustrine_wetland
+:Lacustrine_wetland rdf:type owl:Class ;
+                    rdfs:subClassOf :Natural_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Lake
+:Lake rdf:type owl:Class ;
+      rdfs:subClassOf :NaturalObject .
+
+
+###  http://www.gisxx.com/wmo#Mammal
+:Mammal rdf:type owl:Class ;
+        rdfs:subClassOf :Vertebrate .
+
+
+###  http://www.gisxx.com/wmo#Mangrove
+:Mangrove rdf:type owl:Class ;
+          rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Marine_aquaculture_area
+:Marine_aquaculture_area rdf:type owl:Class ;
+                         rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Marine_subtidal_aquatic_beds
+:Marine_subtidal_aquatic_beds rdf:type owl:Class ;
+                              rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Marshy_meadow
+:Marshy_meadow rdf:type owl:Class ;
+               rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Marshy_wetland
+:Marshy_wetland rdf:type owl:Class ;
+                rdfs:subClassOf :Natural_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Microbe
+:Microbe rdf:type owl:Class ;
+         rdfs:subClassOf :BioticMaterial .
+
+
+###  http://www.gisxx.com/wmo#Mountain
+:Mountain rdf:type owl:Class ;
+          rdfs:subClassOf :NaturalObject .
+
+
+###  http://www.gisxx.com/wmo#NaturalObject
+:NaturalObject rdf:type owl:Class ;
+               rdfs:subClassOf :WetlandObject .
+
+
+###  http://www.gisxx.com/wmo#Natural_Wetland
+:Natural_Wetland rdf:type owl:Class ;
+                 rdfs:subClassOf :Wetland .
+
+
+###  http://www.gisxx.com/wmo#NutrientCycle
+:NutrientCycle rdf:type owl:Class ;
+               rdfs:subClassOf :ChemicalProcesses .
+
+
+###  http://www.gisxx.com/wmo#PM2.5
+:PM2.5 rdf:type owl:Class ;
+       rdfs:subClassOf :Atmosphere .
+
+
+###  http://www.gisxx.com/wmo#Paddy_fields
+:Paddy_fields rdf:type owl:Class ;
+              rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Permanent_brackish_or_alkaline_lakes
+:Permanent_brackish_or_alkaline_lakes rdf:type owl:Class ;
+                                      rdfs:subClassOf :Lacustrine_wetland .
+
+
+###  http://www.gisxx.com/wmo#Permanent_estuarine_water
+:Permanent_estuarine_water rdf:type owl:Class ;
+                           rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Permanent_freshwater_lake
+:Permanent_freshwater_lake rdf:type owl:Class ;
+                           rdfs:subClassOf :Lacustrine_wetland .
+
+
+###  http://www.gisxx.com/wmo#Permanent_river
+:Permanent_river rdf:type owl:Class ;
+                 rdfs:subClassOf :Riverine_wetland .
+
+
+###  http://www.gisxx.com/wmo#PhysicalProcesses
+:PhysicalProcesses rdf:type owl:Class ;
+                   rdfs:subClassOf :WetlandProcess .
+
+
+###  http://www.gisxx.com/wmo#Plant
+:Plant rdf:type owl:Class ;
+       rdfs:subClassOf :BioticMaterial .
+
+
+###  http://www.gisxx.com/wmo#PrecipitationProcess
+:PrecipitationProcess rdf:type owl:Class ;
+                      rdfs:subClassOf :HydrologicalCycle .
+
+
+###  http://www.gisxx.com/wmo#PrimaryProduction
+:PrimaryProduction rdf:type owl:Class ;
+                   rdfs:subClassOf :BiologicalProcess .
+
+
+###  http://www.gisxx.com/wmo#Reservoirs
+:Reservoirs rdf:type owl:Class ;
+            rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#River
+:River rdf:type owl:Class ;
+       rdfs:subClassOf :NaturalObject .
+
+
+###  http://www.gisxx.com/wmo#Riverine_wetland
+:Riverine_wetland rdf:type owl:Class ;
+                  rdfs:subClassOf :Natural_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Road
+:Road rdf:type owl:Class ;
+      rdfs:subClassOf :ArtificialObject .
+
+
+###  http://www.gisxx.com/wmo#Rocky_marine_shore
+:Rocky_marine_shore rdf:type owl:Class ;
+                    rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Rreptile
+:Rreptile rdf:type owl:Class ;
+          rdfs:subClassOf :Vertebrate .
+
+
+###  http://www.gisxx.com/wmo#SO2
+:SO2 rdf:type owl:Class ;
+     rdfs:subClassOf :Atmosphere .
+
+
+###  http://www.gisxx.com/wmo#Salt_fields
+:Salt_fields rdf:type owl:Class ;
+             rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Sand_shingle_or_pebble_marine_shores
+:Sand_shingle_or_pebble_marine_shores rdf:type owl:Class ;
+                                      rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Seasonal_brackish_and_alkaline_or_saline_lakes
+:Seasonal_brackish_and_alkaline_or_saline_lakes rdf:type owl:Class ;
+                                                rdfs:subClassOf :Lacustrine_wetland .
+
+
+###  http://www.gisxx.com/wmo#Seasonal_brackish_or_alkaline_marshes
+:Seasonal_brackish_or_alkaline_marshes rdf:type owl:Class ;
+                                       rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Seasonal_freshwater_lake
+:Seasonal_freshwater_lake rdf:type owl:Class ;
+                          rdfs:subClassOf :Lacustrine_wetland .
+
+
+###  http://www.gisxx.com/wmo#Seasonal_or_intermittently_rivers
+:Seasonal_or_intermittently_rivers rdf:type owl:Class ;
+                                   rdfs:subClassOf :Riverine_wetland .
+
+
+###  http://www.gisxx.com/wmo#Seasonally_irrigated
+:Seasonally_irrigated rdf:type owl:Class ;
+                      rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Shallow__permanent_shallow_marine_water
+:Shallow__permanent_shallow_marine_water rdf:type owl:Class ;
+                                         rdfs:subClassOf :Coastal_wetland .
+
+
+###  http://www.gisxx.com/wmo#Shrub_-dominated_marsh
+:Shrub_-dominated_marsh rdf:type owl:Class ;
+                        rdfs:subClassOf :Marshy_wetland .
+
+
+###  http://www.gisxx.com/wmo#Soil
+:Soil rdf:type owl:Class ;
+      rdfs:subClassOf :AbioticMaterial .
+
+
+###  http://www.gisxx.com/wmo#Tree
+:Tree rdf:type owl:Class ;
+      rdfs:subClassOf :Plant .
+
+
+###  http://www.gisxx.com/wmo#Vertebrate
+:Vertebrate rdf:type owl:Class ;
+            rdfs:subClassOf :Animal .
+
+
+###  http://www.gisxx.com/wmo#Wastewater_treatment_area
+:Wastewater_treatment_area rdf:type owl:Class ;
+                           rdfs:subClassOf :Human-made_Wetland .
+
+
+###  http://www.gisxx.com/wmo#Water
+:Water rdf:type owl:Class ;
+       rdfs:subClassOf :AbioticMaterial .
+
+
+###  http://www.gisxx.com/wmo#Wetland
+:Wetland rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000006> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcess ;
+                           owl:someValuesFrom :WetlandProcess
+                         ] .
+
+
+###  http://www.gisxx.com/wmo#WetlandMaterial
+:WetlandMaterial rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> .
+
+
+###  http://www.gisxx.com/wmo#WetlandObject
+:WetlandObject rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> .
+
+
+###  http://www.gisxx.com/wmo#WetlandProcess
+:WetlandProcess rdf:type owl:Class ;
+                rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasParticipant ;
+                                  owl:someValuesFrom :WetlandMaterial
+                                ] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

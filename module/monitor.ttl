@@ -69,8 +69,33 @@
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://qudt.org/schema/qudt/LatexString
+<http://qudt.org/schema/qudt/LatexString> rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML
+rdf:HTML rdf:type rdfs:Datatype .
+
+
+#################################################################
 #    Object Properties
 #################################################################
+
+###  http://qudt.org/schema/qudt/unit
+<http://qudt.org/schema/qudt/unit> rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf <http://qudt.org/schema/qudt/unitFor> ;
+                                   rdfs:range <http://qudt.org/schema/qudt/Unit> ;
+                                   <http://purl.org/dc/terms/description> "A reference to the unit of measure of a quantity (variable or constant) of interest."^^rdf:HTML ;
+                                   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+                                   rdfs:label "unit" .
+
+
+###  http://qudt.org/schema/qudt/unitFor
+<http://qudt.org/schema/qudt/unitFor> rdf:type owl:ObjectProperty .
+
 
 ###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
 <http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:ObjectProperty ;
@@ -287,6 +312,12 @@
 #    Data properties
 #################################################################
 
+###  http://qudt.org/schema/qudt/numericValue
+<http://qudt.org/schema/qudt/numericValue> rdf:type owl:DatatypeProperty ;
+                                           rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+                                           rdfs:label "numeric value" .
+
+
 ###  http://www.w3.org/ns/sosa/resultTime
 <http://www.w3.org/ns/sosa/resultTime> rdf:type owl:DatatypeProperty ;
                                        rdfs:range xsd:dateTime ;
@@ -301,6 +332,11 @@
 #    Classes
 #################################################################
 
+###  http://gisxx.com/ontology/wmo#AirSensor
+<http://gisxx.com/ontology/wmo#AirSensor> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
 ###  http://gisxx.com/ontology/wmo#Drone-basedPlatform
 <http://gisxx.com/ontology/wmo#Drone-basedPlatform> rdf:type owl:Class ;
                                                     rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
@@ -308,7 +344,7 @@
 
 ###  http://gisxx.com/ontology/wmo#Human
 <http://gisxx.com/ontology/wmo#Human> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+                                      rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> .
 
 
 ###  http://gisxx.com/ontology/wmo#HyperspectralSensor
@@ -336,6 +372,16 @@
                                             rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
 
 
+###  http://gisxx.com/ontology/wmo#WaterQualitySensor
+<http://gisxx.com/ontology/wmo#WaterQualitySensor> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://gisxx.com/ontology/wmo#WeatherSensor
+<http://gisxx.com/ontology/wmo#WeatherSensor> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
 ###  http://purl.obolibrary.org/obo/BFO_0000004
 <http://purl.obolibrary.org/obo/BFO_0000004> rdf:type owl:Class .
 
@@ -358,6 +404,26 @@
 
 ###  http://purl.obolibrary.org/obo/BFO_0000031
 <http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class .
+
+
+###  http://qudt.org/schema/qudt/QuantityValue
+<http://qudt.org/schema/qudt/QuantityValue> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.w3.org/ns/sosa/Result> ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://qudt.org/schema/qudt/unit> ;
+                                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                            ] ;
+                                            rdfs:comment "A <i>Quantity Value</i> expresses the magnitude and kind of a quantity and is given by the product of a numerical value <code>n</code> and a unit of measure <code>U</code>. The number multiplying the unit is referred to as the numerical value of the quantity expressed in that unit. Refer to <a href=\"http://physics.nist.gov/Pubs/SP811/sec07.html\">NIST SP 811 section 7</a> for more on quantity values."^^rdf:HTML ;
+                                            rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+                                            rdfs:label "Quantity value" .
+
+
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
+                                   <http://purl.org/dc/terms/description> "A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). Any measurement of the length can be expressed as a number multiplied by the unit meter. More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  \\(Q = nU\\)."^^<http://qudt.org/schema/qudt/LatexString> ;
+                                   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt> ;
+                                   rdfs:label "Unit" .
 
 
 ###  http://www.w3.org/2006/time#TemporalEntity

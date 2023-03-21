@@ -1,0 +1,554 @@
+@prefix : <http://gisxx.com/ontology/ecosystem#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix wmo: <http://gisxx.com/ontology/wmo#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
+
+<http://gisxx.com/ontology/indicator> a owl:Ontology ;
+	terms:creator "Xin Xiao (Jiangxi Normal University)"@en ;
+	rdfs:label "wetland" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+
+terms:creator a owl:AnnotationProperty .
+# 
+# http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> a owl:AnnotationProperty .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+
+skos:definition a owl:AnnotationProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://gisxx.com/ontology/wmo#cause
+
+wmo:cause a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+# 
+# http://gisxx.com/ontology/wmo#influence
+
+wmo:influence a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+# 
+# http://gisxx.com/ontology/wmo#modify
+
+wmo:modify a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+# 
+# http://gisxx.com/ontology/wmo#produce
+
+wmo:produce a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	rdfs:range wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#promote
+
+wmo:promote a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+# 
+# http://gisxx.com/ontology/wmo#reduce
+
+wmo:reduce a owl:ObjectProperty ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://gisxx.com/ontology/wmo#AbioticState
+
+wmo:AbioticState a owl:Class ;
+	rdfs:subClassOf wmo:WetlandState .
+# 
+# http://gisxx.com/ontology/wmo#Agriculture
+
+wmo:Agriculture a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#AirDensity
+
+wmo:AirDensity a owl:Class ;
+	rdfs:subClassOf wmo:MeteorologicalParameter .
+# 
+# http://gisxx.com/ontology/wmo#AirHumidity
+
+wmo:AirHumidity a owl:Class ;
+	rdfs:subClassOf wmo:MeteorologicalParameter .
+# 
+# http://gisxx.com/ontology/wmo#AirQuality
+
+wmo:AirQuality a owl:Class ;
+	rdfs:subClassOf wmo:AtmosphereProperty .
+# 
+# http://gisxx.com/ontology/wmo#AirTemperature
+
+wmo:AirTemperature a owl:Class ;
+	rdfs:subClassOf wmo:MeteorologicalParameter .
+# 
+# http://gisxx.com/ontology/wmo#AmmoniaNitrogen
+
+wmo:AmmoniaNitrogen a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#AnimalHusbandry
+
+wmo:AnimalHusbandry a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#AtmosphereProperty
+
+wmo:AtmosphereProperty a owl:Class ;
+	rdfs:subClassOf wmo:AbioticState .
+# 
+# http://gisxx.com/ontology/wmo#BOD5
+
+wmo:BOD5 a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality ;
+	rdfs:comment "5天内好氧微生物氧化分解单位体积水中有机物所消耗的游离氧的数量，表示单位为氧的毫克/升（O2，mg/L）"@cn .
+# 
+# http://gisxx.com/ontology/wmo#BarometricPressure
+
+wmo:BarometricPressure a owl:Class ;
+	rdfs:subClassOf wmo:MeteorologicalParameter .
+# 
+# http://gisxx.com/ontology/wmo#BioticState
+
+wmo:BioticState a owl:Class ;
+	rdfs:subClassOf wmo:WetlandState .
+# 
+# http://gisxx.com/ontology/wmo#CO2Concentration
+
+wmo:CO2Concentration a owl:Class ;
+	rdfs:subClassOf wmo:AirQuality .
+# 
+# http://gisxx.com/ontology/wmo#Chlorophyll-a
+
+wmo:Chlorophyll-a a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#ClimateRegulation
+
+wmo:ClimateRegulation a owl:Class ;
+	rdfs:subClassOf wmo:RegulatingServices .
+# 
+# http://gisxx.com/ontology/wmo#CommunityLevel
+
+wmo:CommunityLevel a owl:Class ;
+	rdfs:subClassOf wmo:BioticState .
+# 
+# http://gisxx.com/ontology/wmo#CulturalServices
+
+wmo:CulturalServices a owl:Class ;
+	rdfs:subClassOf wmo:EcosystemService .
+# 
+# http://gisxx.com/ontology/wmo#Culture
+
+wmo:Culture a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#DichromateOxidizability
+
+wmo:DichromateOxidizability a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#DissolvedOxygen
+
+wmo:DissolvedOxygen a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#EcosystemService
+
+wmo:EcosystemService a owl:Class ;
+	rdfs:subClassOf wmo:WetlandImpact .
+# 
+# http://gisxx.com/ontology/wmo#ElectricalConductivity
+
+wmo:ElectricalConductivity a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#Eutrophication
+
+wmo:Eutrophication a owl:Class ;
+	rdfs:subClassOf wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#Fishery
+
+wmo:Fishery a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#FloodRegulation
+
+wmo:FloodRegulation a owl:Class ;
+	rdfs:subClassOf wmo:RegulatingServices .
+# 
+# http://gisxx.com/ontology/wmo#Forestry
+
+wmo:Forestry a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#FreshWater
+
+wmo:FreshWater a owl:Class ;
+	rdfs:subClassOf wmo:ProvisioningServices .
+# 
+# http://gisxx.com/ontology/wmo#GDP
+
+wmo:GDP a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#GeneticLevel
+
+wmo:GeneticLevel a owl:Class ;
+	rdfs:subClassOf wmo:BioticState .
+# 
+# http://gisxx.com/ontology/wmo#GeoState
+
+wmo:GeoState a owl:Class ;
+	rdfs:subClassOf wmo:WetlandState .
+# 
+# http://gisxx.com/ontology/wmo#GroundTemperature
+
+wmo:GroundTemperature a owl:Class ;
+	rdfs:subClassOf wmo:SoilProperty .
+# 
+# http://gisxx.com/ontology/wmo#HabitalLevel
+
+wmo:HabitalLevel a owl:Class ;
+	rdfs:subClassOf wmo:BioticState .
+# 
+# http://gisxx.com/ontology/wmo#Indicator
+
+wmo:Indicator a owl:Class ;
+	rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> .
+
+<http://www.w3.org/ns/ssn/Property> a owl:Class .
+# 
+# http://gisxx.com/ontology/wmo#LandCover
+
+wmo:LandCover a owl:Class ;
+	rdfs:subClassOf wmo:GeoState .
+# 
+# http://gisxx.com/ontology/wmo#LandUseChange
+
+wmo:LandUseChange a owl:Class ;
+	rdfs:subClassOf wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#MeteorologicalParameter
+
+wmo:MeteorologicalParameter a owl:Class ;
+	rdfs:subClassOf wmo:AtmosphereProperty .
+# 
+# http://gisxx.com/ontology/wmo#MiningIndustry
+
+wmo:MiningIndustry a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#NutrientCycling
+
+wmo:NutrientCycling a owl:Class ;
+	rdfs:subClassOf wmo:SupportingServices .
+# 
+# http://gisxx.com/ontology/wmo#OrganicContentOfSoil
+
+wmo:OrganicContentOfSoil a owl:Class ;
+	rdfs:subClassOf wmo:SoilProperty .
+# 
+# http://gisxx.com/ontology/wmo#OrganicPollution
+
+wmo:OrganicPollution a owl:Class ;
+	rdfs:subClassOf wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#PM2.5Concentration
+
+wmo:PM2.5Concentration a owl:Class ;
+	rdfs:subClassOf wmo:AirQuality .
+# 
+# http://gisxx.com/ontology/wmo#PermanganateIndex
+
+wmo:PermanganateIndex a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#PermanganateIndexClass
+
+wmo:PermanganateIndexClass a owl:Class ;
+	rdfs:subClassOf wmo:WaterQualityClass ;
+	rdfs:isDefinedBy "地表水环境质量标准（GB 3838-2002）"@cn .
+# 
+# http://gisxx.com/ontology/wmo#Pesticides
+
+wmo:Pesticides a owl:Class ;
+	rdfs:subClassOf wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#Population
+
+wmo:Population a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#Precipitation
+
+wmo:Precipitation a owl:Class ;
+	rdfs:subClassOf wmo:MeteorologicalParameter .
+# 
+# http://gisxx.com/ontology/wmo#PrimaryProduction
+
+wmo:PrimaryProduction a owl:Class ;
+	rdfs:subClassOf wmo:SupportingServices .
+# 
+# http://gisxx.com/ontology/wmo#ProvisioningServices
+
+wmo:ProvisioningServices a owl:Class ;
+	rdfs:subClassOf wmo:EcosystemService .
+# 
+# http://gisxx.com/ontology/wmo#RegulatingServices
+
+wmo:RegulatingServices a owl:Class ;
+	rdfs:subClassOf wmo:EcosystemService .
+# 
+# http://gisxx.com/ontology/wmo#SO2Concentration
+
+wmo:SO2Concentration a owl:Class ;
+	rdfs:subClassOf wmo:AirQuality .
+# 
+# http://gisxx.com/ontology/wmo#SalineIntrusion
+
+wmo:SalineIntrusion a owl:Class ;
+	rdfs:subClassOf wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#SalinityOfSoil
+
+wmo:SalinityOfSoil a owl:Class ;
+	rdfs:subClassOf wmo:SoilProperty .
+# 
+# http://gisxx.com/ontology/wmo#Sediment
+
+wmo:Sediment a owl:Class ;
+	rdfs:subClassOf wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#SoilFormation
+
+wmo:SoilFormation a owl:Class ;
+	rdfs:subClassOf wmo:SupportingServices ;
+	rdfs:comment "Soil formation by sediment accretion"@en .
+# 
+# http://gisxx.com/ontology/wmo#SoilHumidity
+
+wmo:SoilHumidity a owl:Class ;
+	rdfs:subClassOf wmo:SoilProperty .
+# 
+# http://gisxx.com/ontology/wmo#SoilPh
+
+wmo:SoilPh a owl:Class ;
+	rdfs:subClassOf wmo:SoilProperty .
+# 
+# http://gisxx.com/ontology/wmo#SoilProperty
+
+wmo:SoilProperty a owl:Class ;
+	rdfs:subClassOf wmo:AbioticState .
+# 
+# http://gisxx.com/ontology/wmo#SoilWaterSuction
+
+wmo:SoilWaterSuction a owl:Class ;
+	rdfs:subClassOf wmo:SoilProperty .
+# 
+# http://gisxx.com/ontology/wmo#SolidsSuspension
+
+wmo:SolidsSuspension a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#SpeciesLevel
+
+wmo:SpeciesLevel a owl:Class ;
+	rdfs:subClassOf wmo:BioticState .
+# 
+# http://gisxx.com/ontology/wmo#SupportingServices
+
+wmo:SupportingServices a owl:Class ;
+	rdfs:subClassOf wmo:EcosystemService .
+# 
+# http://gisxx.com/ontology/wmo#TotalDissolvedSolid
+
+wmo:TotalDissolvedSolid a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#TotalNitrogen
+
+wmo:TotalNitrogen a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#TotalOrganicCarbon
+
+wmo:TotalOrganicCarbon a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#TotalPhosphorus
+
+wmo:TotalPhosphorus a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#Tourism
+
+wmo:Tourism a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#ToxicChemicals
+
+wmo:ToxicChemicals a owl:Class ;
+	rdfs:subClassOf wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#TrophicLevelIndex
+
+wmo:TrophicLevelIndex a owl:Class ;
+	rdfs:subClassOf wmo:WetlandImpact ;
+	rdfs:comment "The trophic level index (TLI)  is designed to identify nutrition levels in lake." ;
+	skos:definition "TLI(CODMn)=10[0.109+2.66ln(CODMn)]" , "TLI(Chl−a)=10[2.5+1.086ln(Chl−a)]" , "TLI(SD)=10[5.118−1.94ln(SD)]" , "TLI(TN)=10[5.453+1.694ln(TN)]" , "TLI(TP)=10[9.436+1.624ln(TP)]" .
+# 
+# http://gisxx.com/ontology/wmo#Urbanization
+
+wmo:Urbanization a owl:Class ;
+	rdfs:subClassOf wmo:WetlandDriver .
+# 
+# http://gisxx.com/ontology/wmo#WaterClass
+
+wmo:WaterClass a owl:Class ;
+	rdfs:subClassOf wmo:WaterQualityClass .
+# 
+# http://gisxx.com/ontology/wmo#WaterPh
+
+wmo:WaterPh a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#WaterPurification
+
+wmo:WaterPurification a owl:Class ;
+	rdfs:subClassOf wmo:RegulatingServices .
+# 
+# http://gisxx.com/ontology/wmo#WaterQuality
+
+wmo:WaterQuality a owl:Class ;
+	rdfs:subClassOf wmo:AbioticState .
+# 
+# http://gisxx.com/ontology/wmo#WaterQualityClass
+
+wmo:WaterQualityClass a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#WaterTemperature
+
+wmo:WaterTemperature a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#WaterTransparency
+
+wmo:WaterTransparency a owl:Class ;
+	rdfs:subClassOf wmo:WaterQuality .
+# 
+# http://gisxx.com/ontology/wmo#WetlandDamageIndex
+
+wmo:WetlandDamageIndex a owl:Class ;
+	rdfs:subClassOf wmo:WetlandImpact .
+# 
+# http://gisxx.com/ontology/wmo#WetlandDriver
+
+wmo:WetlandDriver a owl:Class ;
+	rdfs:subClassOf wmo:Indicator .
+# 
+# http://gisxx.com/ontology/wmo#WetlandImpact
+
+wmo:WetlandImpact a owl:Class ;
+	rdfs:subClassOf wmo:Indicator , _:genid1 .
+
+_:genid1 a owl:Restriction ;
+	owl:onProperty wmo:promote ;
+	owl:someValuesFrom wmo:WetlandResponse .
+# 
+# http://gisxx.com/ontology/wmo#WetlandPressure
+
+wmo:WetlandPressure a owl:Class ;
+	rdfs:subClassOf wmo:Indicator , _:genid2 .
+
+_:genid2 a owl:Restriction ;
+	owl:onProperty wmo:influence ;
+	owl:someValuesFrom wmo:WetlandState .
+# 
+# http://gisxx.com/ontology/wmo#WetlandResponse
+
+wmo:WetlandResponse a owl:Class ;
+	rdfs:subClassOf wmo:Indicator , _:genid3 .
+
+_:genid3 a owl:Restriction ;
+	owl:onProperty wmo:influence ;
+	owl:someValuesFrom wmo:WetlandState .
+
+wmo:WetlandResponse rdfs:subClassOf _:genid4 .
+
+_:genid4 a owl:Restriction ;
+	owl:onProperty wmo:modify ;
+	owl:someValuesFrom wmo:WetlandDriver .
+
+wmo:WetlandResponse rdfs:subClassOf _:genid5 .
+
+_:genid5 a owl:Restriction ;
+	owl:onProperty wmo:reduce ;
+	owl:someValuesFrom wmo:WetlandPressure .
+# 
+# http://gisxx.com/ontology/wmo#WetlandState
+
+wmo:WetlandState a owl:Class ;
+	rdfs:subClassOf wmo:Indicator , _:genid6 .
+
+_:genid6 a owl:Restriction ;
+	owl:onProperty wmo:cause ;
+	owl:someValuesFrom wmo:WetlandImpact .
+# 
+# http://gisxx.com/ontology/wmo#WindDirection
+
+wmo:WindDirection a owl:Class ;
+	rdfs:subClassOf wmo:MeteorologicalParameter .
+# 
+# http://gisxx.com/ontology/wmo#WindSpeed
+
+wmo:WindSpeed a owl:Class ;
+	rdfs:subClassOf wmo:MeteorologicalParameter .
+# 
+# http://gisxx.com/ontology/wmo#Recreation&Tourism
+
+<http://gisxx.com/ontology/wmo#Recreation&Tourism> a owl:Class ;
+	rdfs:subClassOf wmo:CulturalServices .
+# 
+# http://purl.obolibrary.org/obo/BFO_0000019
+
+obo:BFO_0000019 a owl:Class .
+# 
+# http://www.w3.org/ns/ssn/Property
+# 
+# Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

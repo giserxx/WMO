@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/temporal" uri="module/temporal.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/indicator" uri="module/Indicator.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/geospatial" uri="module/geospatial.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.gisxx.com/wmo/ecosystem" uri="module/ecosystem.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl" uri="import/bfo.owl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/monitor" uri="module/monitor.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl" uri="file:/C:/Users/DEll/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.ifomis.org/bfo/1.0" uri="file:/C:/Users/DEll/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.ifomis.org/bfo/1.1" uri="file:/C:/Users/DEll/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/DEll/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl" uri="file:/C:/Users/DEll/Desktop/bfo.owl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/DEll/Downloads/bfo.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.gisxx.com/wmo/ecosystem" uri="ecosystem.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/indicator" uri="Indicator.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://www.gisxx.com/wmo#" uri="ecosystem.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/ecosystem" uri="Indicator.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/DEll/OneDrive/phd/ontology/bfo%20(1).owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/96328/ontologies/2022/11/untitled-ontology-90" uri="test.owl"/>
     <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/geospatial" uri="geospatial.ttl"/>
     <uri id="Imports Wizard Entry" name="http://gisxx.com/ontology/temporal" uri="temporal.ttl"/>
     <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/96328/ontologies/2022/11/untitled-ontology-89" uri="test.owl"/>
@@ -19,6 +37,6 @@
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/96328/OneDrive/phd/ontology/bfo.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl" uri="file:/C:/Users/96328/OneDrive/phd/ontology/bfo.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1671601823056" name="http://www.semanticweb.org/96328/ontologies/2022/11/untitled-ontology-89" uri="test.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1679405561226" name="http://purl.obolibrary.org/obo/bfo.owl" uri="import/bfo.owl"/>
     </group>
 </catalog>
