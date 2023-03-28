@@ -4,9 +4,11 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix monitor: <http://gisxx.com/ontology/monitor#> .
 @base <http://gisxx.com/ontology/monitor> .
 
-<http://gisxx.com/ontology/monitor> rdf:type owl:Ontology .
+<http://gisxx.com/ontology/monitor> rdf:type owl:Ontology ;
+                                     owl:imports <http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl> .
 
 #################################################################
 #    Annotation properties
@@ -380,6 +382,11 @@ rdf:HTML rdf:type rdfs:Datatype .
 ###  http://gisxx.com/ontology/wmo#WeatherSensor
 <http://gisxx.com/ontology/wmo#WeatherSensor> rdf:type owl:Class ;
                                               rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> .
+
+
+###  http://gisxx.com/ontology/wmo#WetlandProperty
+<http://gisxx.com/ontology/wmo#WetlandProperty> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> .
 
 
 ###  http://purl.obolibrary.org/obo/BFO_0000004
